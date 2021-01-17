@@ -23,37 +23,25 @@ Check URLs for response status code and redirect location.
 
 
 200 https://www.qq.com/
-200 https://www.apple.com/
-302 https://www.microsoft.com/ → https://www.microsoft.com/sr-latn-rs/
-302 https://www.paypal.com/ → https://www.paypal.com/rs/home
-301 https://www.live.com/ → https://outlook.live.com/owa/
-301 https://www.adcash.com/ → https://adcash.com/
-301 https://www.kickass.so/ → http://www.kickass.so/
 200 https://www.wikipedia.org/
-200 https://www.amazon.de/
-301 https://www.vk.com/ → https://vk.com/
-403 https://www.163.com/
 200 https://www.youtube.com/
-
+200 https://www.facebook.com/
+200 https://www.yahoo.com/
+200 https://www.amazon.com/
+301 https://www.twitter.com/ → https://twitter.com/
+302 https://www.taobao.com/ → https://world.taobao.com
+200 https://www.baidu.com/
 ```
 Generated output file format: `[url, statusCode, redirect_url]`, tab separated:
 
 ```
 https://www.qq.com/	200	
-https://www.apple.com/	200	
-https://www.microsoft.com/	302	https://www.microsoft.com/sr-latn-rs/
-https://www.amazon.de/	200	
-https://www.kickass.so/	301	http://www.kickass.so/
-https://www.live.com/	301	https://outlook.live.com/owa/
-https://www.adcash.com/	301	https://adcash.com/
 https://www.wikipedia.org/	200	
-https://www.google.co.in/	200	
-https://www.google.co.uk/	200	
-https://www.google.de/	200	
-https://www.google.ru/	200	
-https://www.google.it/	200	
-https://www.google.com.br/	200	
-https://www.sina.com.cn/	200	
-https://www.google.es/	200	
 https://www.youtube.com/	200	
+https://www.facebook.com/	200	
+https://www.yahoo.com/	200	
+https://www.amazon.com/	200	
+https://www.twitter.com/	301	https://twitter.com/
+https://www.taobao.com/	302	https://world.taobao.com
+https://www.baidu.com/	200	
 ```
