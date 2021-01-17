@@ -2,7 +2,7 @@ rediWrecked
 -----------
 Check URLs for response status code and redirect location.
 
-#### Arguments
+### Arguments
 ```
   -i string
     	Input file path (required)
@@ -13,7 +13,7 @@ Check URLs for response status code and redirect location.
   -s	Simple CLI (tab separated)
 ```
 
-#### Example usage
+### Example usage
 ```
 > go run rediWrecked.go -i input.txt -o output.txt 
 
@@ -37,6 +37,7 @@ Check URLs for response status code and redirect location.
 
 ```
 ##### output.txt
+Generated output file format: `[url, statusCode, redirect_url]`, tab separated.
 ```
 https://www.qq.com/	200	
 https://www.apple.com/	200	
