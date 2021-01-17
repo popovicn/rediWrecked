@@ -64,7 +64,7 @@ func writeResultLine(line, outputFile string) {
     _ = writer.Flush()
 }
 
-func processUrl(url string, outputFile string, outputChannel chan string, wg *sync.WaitGroup, queue chan struct{}){
+func processUrl(url string, outputFile string, wg *sync.WaitGroup, queue chan struct{}){
     client := &http.Client{
         CheckRedirect: func(req *http.Request, via []*http.Request) error {
             return http.ErrUseLastResponse
@@ -110,12 +110,11 @@ func main() {
 
     var wg sync.WaitGroup
     queue := make(chan struct{}, *parallelism)
-    outputChannel := make(chan string, *parallelism + 1)
     scanner := bufio.NewScanner(inputFile)
     for scanner.Scan() {
         queue <- struct{}{}
         wg.Add(1)
-        go processUrl(scanner.Text(), *outputFilePath, outputChannel, &wg, queue)
+        go processUrl(scanner.Text(), *outputFilePath, &wg, queue)
     }
     wg.Wait()
 }
