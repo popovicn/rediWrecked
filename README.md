@@ -36,8 +36,8 @@ Check URLs for response status code and redirect location.
 200 https://www.youtube.com/
 
 ```
-##### output.txt
-Generated output file format: `[url, statusCode, redirect_url]`, tab separated.
+Generated output file format: `[url, statusCode, redirect_url]`, tab separated:
+
 ```
 https://www.qq.com/	200	
 https://www.apple.com/	200	
